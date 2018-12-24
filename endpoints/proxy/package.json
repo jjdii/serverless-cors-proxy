@@ -1,0 +1,18 @@
+{
+  "name": "serverless-cors-proxy",
+  "version": "1.0.0",
+  "description": "Basic node serverless CORS proxy. Deploy a generic proxy service to AWS in minutes.",
+  "main": "handler.js",
+  "dependencies": {
+    "circular-json": "^0.5.5",
+    "ramda": "^0.25.0",
+    "request": "^2.88.0"
+  },
+  "author": "jjdii",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-webpack": "^5.1.5",
+    "webpack": "^4.12.0",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

@@ -1,0 +1,5 @@
+NAME: serverless-cors-proxy
+NODE_VERSION: nodejs8.10
+AWS_MEMORY: 1536
+AWS_TIMEOUT: 5
+AWS_WARMUP_RATE: rate(4 minutes)
