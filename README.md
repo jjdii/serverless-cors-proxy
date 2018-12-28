@@ -19,11 +19,11 @@ git clone https://github.com/jjdii/serverless-cors-proxy.git
 cd serverless-cors-proxy
 ```
 
-2) Create a new user in AWS IAM with `AdministratorAccess`. Save the access keys provided.
+2) Create a new user in AWS IAM with `AdministratorAccess`. Save the access keys provided for step 4.
 
 3) Create a new API in the AWS API Gateway.
 
-4) Run the setup script. It will ask for your AWS access keys.
+4) Run the setup script. It will ask for your AWS access keys from step 2.
 ```
 ./sls setup
 ```
