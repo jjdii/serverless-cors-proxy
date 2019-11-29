@@ -33,22 +33,25 @@ module.exports = {
 		const missingFields = checkFields.required(requiredFields, requestBody)
 		if (not(isEmpty(missingFields))) {
 			return callback(null, buildResponse(200, {
-				message: `missing required fields: ${join(', ', missingFields)}`
+				message: `proxy request error`,
+				error: `missing required fields: ${join(', ', missingFields)}`
 			}))
 		}
 
 		// CHECK IF METHOD ALLOWED
 		if (!contains(requestBody.method.toLowerCase(), ['get', 'post', 'put', 'delete'])) {
 			return callback(null, buildResponse(200, {
-				message: `method not allowed: ${requestBody.method}`
+				message: `proxy request error`,
+				error: `method not allowed: ${requestBody.method}`
 			}))
 		}
 
+		// ASSEMBLE REQUEST POST DATA
 		var requestOpts = {
 			method: (requestBody.method) ? requestBody.method.toUpperCase() : 'GET',
 			url: (requestBody.url) ? requestBody.url : ''
 		}
-
+		
 		if (requestBody.headers) { 
 			requestOpts.headers = (requestBody.headers) ? requestBody.headers : {} 
 		}
